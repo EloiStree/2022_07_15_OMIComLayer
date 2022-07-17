@@ -8,8 +8,8 @@ public class Mock_TimerChannelsTick : MonoBehaviour
 {
 
     public AccessTimerOmiHookNotifyMono m_toTick;
-    public DelayHolder[] delayToTick = new DelayHolder[0];
-
+    public DelayHolder[] m_delayToTick = new DelayHolder[0];
+    public ThreadClock m_threadClock;
     [System.Serializable]
     public class DelayHolder {
         public DelayHolder(double timeBetween, params Action [] actions) {
@@ -36,15 +36,16 @@ public class Mock_TimerChannelsTick : MonoBehaviour
 
     }
    
+
     void Update()
     {
         float t = Time.deltaTime;
-        for (int i = 0; i < delayToTick.Length; i++)
+        for (int i = 0; i < m_delayToTick.Length; i++)
         {
-            if (delayToTick[i] != null && delayToTick[i].m_tick != null) { 
-                delayToTick[i].RemoveTime(t, out bool changed);
+            if (m_delayToTick[i] != null && m_delayToTick[i].m_tick != null) { 
+                m_delayToTick[i].RemoveTime(t, out bool changed);
                 if (changed) {
-                    delayToTick[i].m_tick();
+                    m_delayToTick[i].m_tick();
                 }
             }
         }
@@ -55,6 +56,11 @@ public class Mock_TimerChannelsTick : MonoBehaviour
     private void Awake()
     {
         ResetDelayHolder();
+        m_threadClock = new ThreadClock(m_toTick);
+        m_threadClock.Start();
+    }
+    public void OnDestroy() {
+        m_threadClock.Stop();
     }
    
     [ContextMenu("Refresh")]
@@ -63,7 +69,7 @@ public class Mock_TimerChannelsTick : MonoBehaviour
         if (m_toTick == null || m_toTick == null)
             return;
         //Should be split in two but thread and unity thread but his code is a mock up.
-        delayToTick = new DelayHolder[] {
+        m_delayToTick = new DelayHolder[] {
               new DelayHolder(1f/60    , m_toTick . NotifyCycle_UnityThread_60FPS ),
               new DelayHolder(1f/30    , m_toTick . NotifyCycle_UnityThread_30FPS ),
               new DelayHolder(1f/20          , m_toTick .NotifyCycle_UnityThread_20FPS ),
@@ -86,7 +92,7 @@ public class Mock_TimerChannelsTick : MonoBehaviour
 
 }
 
-
+[System.Serializable]
 public class ThreadClock {
 
     public Thread m_thread;
@@ -120,8 +126,10 @@ public class ThreadClock {
             m_thread.Abort();
             m_thread = null;
         }
+        m_keepThreadAlive = true;
         m_thread = new Thread(ClockThread);
         m_thread.Start();
+
     }
 
     DateTime m_previous;
@@ -130,22 +138,32 @@ public class ThreadClock {
     {
         m_previous= DateTime.Now;
         m_now = DateTime.Now;
-        while (true) {
+        while (m_keepThreadAlive) {
             m_now = DateTime.Now;
-        double t = (m_now-m_previous).TotalMilliseconds;
-        for (int i = 0; i < m_frequences.Length; i++)
-        {
-            if (m_frequences[i] != null && m_frequences[i].m_tick != null)
+            double t = (m_now-m_previous).TotalSeconds; 
+            if (t >= 1.0)
             {
-                    m_frequences[i].RemoveTime(t, out bool changed);
-                if (changed)
+                for (int i = 0; i < m_frequences.Length; i++)
                 {
-                    m_frequences[i].m_tick();
+                    if (m_frequences[i] != null && m_frequences[i].m_tick != null)
+                    {
+                        m_frequences[i].RemoveTime(t, out bool changed);
+                        if (changed)
+                        {
+                            m_frequences[i].m_tick();
+                        }
+                    }
                 }
+                m_previous = m_now;
             }
-            }
-            m_previous = m_now;
             Thread.Sleep(1);
         }
+    }
+
+    public bool m_keepThreadAlive=true;
+    public  void Stop()
+    {
+        m_thread.Abort();
+        m_keepThreadAlive = false;
     }
 }

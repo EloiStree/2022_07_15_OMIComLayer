@@ -33,6 +33,38 @@ public class ExecuteAtCalendarPushTimeOmiDemoMono : MonoBehaviour
         DateTime target = new DateTime(m_year, m_month, m_day, m_hour, m_minute, m_seconds);
         m_executeAtDate.ExecuteCalendarAtDate(in m_targetThread, in target, m_whatToExecute);
     }
+    [ContextMenu("Push at Now +0s")]
+    public void PushAtDate0S()
+    {
+        PushAtDateN(0);
+}
+[ContextMenu("Push at Now +5s")]
+    public void PushAtDate5S()
+    {
+        PushAtDateN(5);
+}
+[ContextMenu("Push at Now +10s")]
+    public void PushAtDate10S() { PushAtDateN(10); }
+    [ContextMenu("Push at Now +30s")]
+    public void PushAtDate30S() { PushAtDateN(30); }
+        [ContextMenu("Push at Now +300s")]
+    public void PushAtDate300S()  {
+    PushAtDateN(300);
+        }
+        [ContextMenu("Push at Now +1800s")]
+    public void PushAtDate1800S() {
+    PushAtDateN(1800);
+        }
+        [ContextMenu("Push at Now +1hs")]
+    public void PushAtDate3600S()  {
+    PushAtDateN(3600);
+        }
+
+    public void PushAtDateN(float timeSeconds)
+    {
+        DateTime target = DateTime.Now.AddSeconds(timeSeconds);
+        m_executeAtDate.ExecuteCalendarAtDate(in m_targetThread, in target, m_whatToExecute);
+    }
     [ContextMenu("Push repeat")]
     public void PushRepeat()
     {

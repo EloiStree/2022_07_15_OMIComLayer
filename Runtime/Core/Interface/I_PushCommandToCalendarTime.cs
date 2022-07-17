@@ -30,4 +30,5 @@ public interface I_PushCommandToCalendarTime
     public void ExecuteCalendarEveryWeekAt(in ClassicThreadTarget thread, in DayOfTheWeek dayOfTheWeak , in Executor_TimeOfDay date, in string commandLine);
     public void ExecuteCalendarEveryMonthAtIndex(in ClassicThreadTarget thread, in byte index_0_31, in bool startToEndOfMonth, in Executor_TimeOfDay date, in string commandLine);
     public void RepeatExecutionEvery(in ClassicThreadTarget thread, in DateTime date, in long millisecondsBetweenRepeat, in string commandLine);
+    public void PutCalendarPusherAsActive(in bool isActive);
 }

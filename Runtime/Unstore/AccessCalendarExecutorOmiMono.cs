@@ -25,6 +25,12 @@ public class AccessCalendarExecutorOmiMono :MonoBehaviour, I_PushCommandToCalend
         AccessCalendarExecutorComBridge.GetInstance().
              ExecuteCalendarEveryWeekAt(in thread, in dayOfTheWeak, in date, in commandLine);
     }
+
+    public void PutCalendarPusherAsActive(in bool isActive)
+    {
+        AccessCalendarExecutorComBridge.GetInstance().PutCalendarPusherAsActive(isActive);
+    }
+
     public void RepeatExecutionEvery(in ClassicThreadTarget thread, in DateTime date, in long millisecondsBetweenRepeat, in string commandLine)
     {
         AccessCalendarExecutorComBridge.GetInstance().
@@ -47,6 +53,7 @@ public abstract class AccessClendarExecutor : I_PushCommandToCalendarTime
     public abstract void ExecuteCalendarEveryDayAt(in ClassicThreadTarget thread, in I_PushCommandToCalendarTime.Executor_TimeOfDay date, in string commandLine);
     public abstract void ExecuteCalendarEveryMonthAtIndex(in ClassicThreadTarget thread, in byte index_0_31, in bool startToEndOfMonth, in I_PushCommandToCalendarTime.Executor_TimeOfDay date, in string commandLine);
     public abstract void ExecuteCalendarEveryWeekAt(in ClassicThreadTarget thread, in I_PushCommandToCalendarTime.DayOfTheWeek dayOfTheWeak, in I_PushCommandToCalendarTime.Executor_TimeOfDay date, in string commandLine);
+    public abstract void PutCalendarPusherAsActive(in bool isActive);
     public abstract void RepeatExecutionEvery(in ClassicThreadTarget thread, in DateTime date, in long millisecondsBetweenRepeat, in string commandLine);
 }
 
@@ -56,6 +63,8 @@ public class DoNothingAccessClendarExecutor : AccessClendarExecutor
     public override void ExecuteCalendarEveryDayAt(in ClassicThreadTarget thread, in I_PushCommandToCalendarTime.Executor_TimeOfDay date, in string commandLine)    {}
     public override void ExecuteCalendarEveryMonthAtIndex(in ClassicThreadTarget thread, in byte index_0_31, in bool startToEndOfMonth, in I_PushCommandToCalendarTime.Executor_TimeOfDay date, in string commandLine)    {}
     public override void ExecuteCalendarEveryWeekAt(in ClassicThreadTarget thread, in I_PushCommandToCalendarTime.DayOfTheWeek dayOfTheWeak, in I_PushCommandToCalendarTime.Executor_TimeOfDay date, in string commandLine)    {}
+
+    public override void PutCalendarPusherAsActive(in bool isActive) { }
     public override void RepeatExecutionEvery(in ClassicThreadTarget thread, in DateTime date, in long millisecondsBetweenRepeat, in string commandLine)    {}
 }
 public class AccessCalendarExecutorPushToOmiFromStatic : AccessClendarExecutor
@@ -82,6 +91,12 @@ public class AccessCalendarExecutorPushToOmiFromStatic : AccessClendarExecutor
     {
         AccessCalendarExecutorComBridge.GetInstance().
              ExecuteCalendarEveryWeekAt(in thread, in dayOfTheWeak, in date, in commandLine);
+    }
+
+    public override void PutCalendarPusherAsActive(in bool isActive)
+    {
+        AccessCalendarExecutorComBridge.GetInstance().
+             PutCalendarPusherAsActive(in isActive);
     }
 
     public override void RepeatExecutionEvery(in ClassicThreadTarget thread, in DateTime date, in long millisecondsBetweenRepeat, in string commandLine)
