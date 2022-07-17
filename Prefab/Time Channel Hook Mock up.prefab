@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1031076303822008289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031076303822008292}
+  - component: {fileID: 1031076303822008291}
+  - component: {fileID: 1031076303822008290}
+  m_Layer: 0
+  m_Name: Time Channel Hook Mock up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1031076303822008292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031076303822008289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1031076303822008291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031076303822008289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca595479ac1ae84eb686f6ad2fc65bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timeHook:
+    m_unityThread_60FPS:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_30FPS:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_20FPS:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_10FPS:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_4FPS:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_5FPS:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_2FPS:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_1Second:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_5Seconds:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_10Seconds:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_20Seconds:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_30Seconds:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_1Minutes:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_5Minutes:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_10Minutes:
+      m_PersistentCalls:
+        m_Calls: []
+    m_unityThread_15Minutes:
+      m_PersistentCalls:
+        m_Calls: []
+    m_threadQueueCount: 0
+    m_unityThreadQueueCount: 0
+--- !u!114 &1031076303822008290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031076303822008289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9905fc68f65c83f4cad9a98485e2a642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toTick: {fileID: 1031076303822008291}
+  delayToTick:
+  - m_timeBetweenTick: 0.016666668
+    m_timeLeft: 0.016666668
+  - m_timeBetweenTick: 0.033333335
+    m_timeLeft: 0.033333335
+  - m_timeBetweenTick: 0.05
+    m_timeLeft: 0.05
+  - m_timeBetweenTick: 0.1
+    m_timeLeft: 0.1
+  - m_timeBetweenTick: 0.2
+    m_timeLeft: 0.2
+  - m_timeBetweenTick: 0.25
+    m_timeLeft: 0.25
+  - m_timeBetweenTick: 0.5
+    m_timeLeft: 0.5
+  - m_timeBetweenTick: 1
+    m_timeLeft: 1
+  - m_timeBetweenTick: 5
+    m_timeLeft: 5
+  - m_timeBetweenTick: 10
+    m_timeLeft: 10
+  - m_timeBetweenTick: 20
+    m_timeLeft: 20
+  - m_timeBetweenTick: 30
+    m_timeLeft: 30
+  - m_timeBetweenTick: 60
+    m_timeLeft: 60
+  - m_timeBetweenTick: 300
+    m_timeLeft: 300
+  - m_timeBetweenTick: 600
+    m_timeLeft: 600
+  - m_timeBetweenTick: 900
+    m_timeLeft: 900
+  count: 0
