@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AccessTimerOmiHookNotifyMono : MonoBehaviour, I_NotifyToHookToTimeThreadCycleOMI
+public class HookAndNotifyToTimeThreadCycleOMIMono : MonoBehaviour, I_NotifyToHookToTimeThreadCycleOMI
 {
 
     public void NotifyCycle_Thread_10FPS() =>

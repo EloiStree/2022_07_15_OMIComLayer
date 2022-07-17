@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ExecuteAtCalendarPushTimeOmiDemoMono : MonoBehaviour
 {
-    public AccessCalendarExecutorOmiMono m_executeAtDate;
+    public QueueTaskOnOMICalenderMono m_executeAtDate;
 
     public string m_whatToExecute="log: Hello Calendar !!";
 

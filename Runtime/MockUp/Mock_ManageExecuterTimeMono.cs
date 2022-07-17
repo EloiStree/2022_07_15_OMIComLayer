@@ -5,22 +5,19 @@ using UnityEngine;
 
 public class Mock_ManageExecuterTimeMono : MonoBehaviour
 {
-
-
-public MockTimeExecuterManager m_timeManager = new MockTimeExecuterManager();
-void Awake()
-{
-    AccessTimeExecutorComBridge.SetTimeExecuter(m_timeManager);
-}
-void OnDestory()
-{
-
-    AccessTimeExecutorComBridge.RemoveTimeExecuter();
-}
+    public Mock_TimeExecuterManager m_timeManager = new Mock_TimeExecuterManager();
+    void Awake()
+    {
+        StaticTimeExecuterComBridge.SetTimeExecuter(m_timeManager);
+    }
+    void OnDestory()
+    {
+        StaticTimeExecuterComBridge.RemoveTimeExecuter();
+    }
 }
 
 [System.Serializable]
-public class MockTimeExecuterManager : I_PushCodeToExecuteOnThreads
+public class Mock_TimeExecuterManager : I_PushCodeToExecuteOnThreads
 {
     public ExecuteAtActionThreadMono m_executeQueue;
 

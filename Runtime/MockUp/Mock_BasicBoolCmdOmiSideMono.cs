@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mock_AbstractImplementOmiSideMono: MonoBehaviour {
+public class Mock_BasicBoolCmdOmiSideMono : MonoBehaviour {
 
-    public Mock_AbstractImplementOmiSide m_mock = new Mock_AbstractImplementOmiSide();
+    public Mock_BasicBoolCmdOmiSide m_mock = new Mock_BasicBoolCmdOmiSide();
     private void Awake()
     {
         FacadeComLayerOMI.m_omiSide = m_mock;
@@ -16,12 +16,8 @@ public class Mock_AbstractImplementOmiSideMono: MonoBehaviour {
     }
 }
 [System.Serializable]
-public class Mock_AbstractImplementOmiSide : AbstractImplementOmiSide
+public class Mock_BasicBoolCmdOmiSide : AbstractBasicBoolCmdOmiSide
 {
-
-    public string[] m_filePaths= new string[0];
-    [TextArea(0, 8)]
-    public string m_fakeXML = "";
     public Dictionary<string, bool> m_registerBooleans = new Dictionary<string, bool>();
 
     [TextArea(0, 8)]
@@ -38,8 +34,6 @@ public class Mock_AbstractImplementOmiSide : AbstractImplementOmiSide
             m_booleanState +=string.Format("{0} {1}\n",item, m_registerBooleans[item]);
         }
     }
-
-
     public override bool IsBooleanExists(in string name) {
        return m_registerBooleans.ContainsKey(name.ToLower());
     }
@@ -56,20 +50,4 @@ public class Mock_AbstractImplementOmiSide : AbstractImplementOmiSide
         GetBooleanValue(in name, out bool result, defaultIfNotDefined);
         return result;
     }
-
-    //public override void GetConfigFilesFromExtension(in string fileExtensionName, out string[] filesPath)
-    //{
-    //    List<string> files = new List<string>();
-    //    for (int i = 0; i < m_filePaths.Length; i++)
-    //    {
-    //        if (m_filePaths[i].ToLower().LastIndexOf(fileExtensionName.ToLower()) > -1)
-    //            files.Add(m_filePaths[i]);
-    //    }
-    //    filesPath = files.ToArray();
-    //}
-
-    //public override void GetXmlItemFromTagName(in string xmlTag, out string xmlText)
-    //{
-    //    xmlText = "<xml></xml>";
-    //}
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class QuickHookOnChannelDemoMono : MonoBehaviour
+public class SoloHookOnClockChannelOMIMono : MonoBehaviour
 {
     public bool m_isHookActive;
     public TimeFrequenceType m_frequence;
@@ -32,12 +32,9 @@ public class QuickHookOnChannelDemoMono : MonoBehaviour
         if (m_isHookActive)
         {
             m_pushUnityEventOnUpdate = true;
-            inc++;
             m_threadEventOnUpdate.Invoke();
-            LogC();
         }
     }
-    public int inc=0;
     private void Update()
     {
         if (m_pushUnityEventOnUpdate) {
@@ -57,5 +54,4 @@ public class QuickHookOnChannelDemoMono : MonoBehaviour
     }
     public void LogA() { Debug.Log("AAA"); }
     public void LogB() { Debug.Log("BBB"); }
-    public void LogC() { Debug.Log("CCC"); }
 }

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class Mock_TimerChannelsTick : MonoBehaviour
+public class Mock_ThreadAndUnityThreadClock : MonoBehaviour
 {
 
-    public AccessTimerOmiHookNotifyMono m_toTick;
+    public HookAndNotifyToTimeThreadCycleOMIMono m_toTick;
     public DelayHolder[] m_delayToTick = new DelayHolder[0];
     public ThreadClock m_threadClock;
     [System.Serializable]
@@ -96,28 +96,28 @@ public class Mock_TimerChannelsTick : MonoBehaviour
 public class ThreadClock {
 
     public Thread m_thread;
-    public Mock_TimerChannelsTick.DelayHolder[] m_frequences;
+    public Mock_ThreadAndUnityThreadClock.DelayHolder[] m_frequences;
     public I_NotifyToHookToTimeThreadCycleOMI m_target;
     public ThreadClock(I_NotifyToHookToTimeThreadCycleOMI target) {
 
         m_target = target;
-        m_frequences = new Mock_TimerChannelsTick.DelayHolder[] {
-              new Mock_TimerChannelsTick.DelayHolder(1f/60,m_target.NotifyCycle_Thread_60FPS   ),
-              new Mock_TimerChannelsTick.DelayHolder(1f/30,m_target .NotifyCycle_Thread_30FPS  ),
-              new Mock_TimerChannelsTick.DelayHolder(1f/20,m_target .NotifyCycle_Thread_20FPS  ),
-              new Mock_TimerChannelsTick.DelayHolder(1f/10,m_target .NotifyCycle_Thread_10FPS  ),
-              new Mock_TimerChannelsTick.DelayHolder(1f/5,m_target .NotifyCycle_Thread_5FPS    ),
-              new Mock_TimerChannelsTick.DelayHolder(1f/4,m_target .NotifyCycle_Thread_4FPS    ),
-              new Mock_TimerChannelsTick.DelayHolder(1f/2,m_target .NotifyCycle_Thread_2FPS    ),
-              new Mock_TimerChannelsTick.DelayHolder(1,m_target .NotifyCycle_Thread_1Second    ),
-              new Mock_TimerChannelsTick.DelayHolder(5,m_target .NotifyCycle_Thread_5Seconds   ),
-              new Mock_TimerChannelsTick.DelayHolder(10,m_target .NotifyCycle_Thread_10Seconds ),
-              new Mock_TimerChannelsTick.DelayHolder(20,m_target .NotifyCycle_Thread_20Seconds ),
-              new Mock_TimerChannelsTick.DelayHolder(30,m_target .NotifyCycle_Thread_30Seconds ),
-              new Mock_TimerChannelsTick.DelayHolder(60,m_target .NotifyCycle_Thread_1Minutes  ),
-              new Mock_TimerChannelsTick.DelayHolder(300,m_target .NotifyCycle_Thread_5Minutes ),
-              new Mock_TimerChannelsTick.DelayHolder(600,m_target .NotifyCycle_Thread_10Minutes),
-              new Mock_TimerChannelsTick.DelayHolder(900,m_target .NotifyCycle_Thread_15Minutes)
+        m_frequences = new Mock_ThreadAndUnityThreadClock.DelayHolder[] {
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(1f/60,m_target.NotifyCycle_Thread_60FPS   ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(1f/30,m_target .NotifyCycle_Thread_30FPS  ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(1f/20,m_target .NotifyCycle_Thread_20FPS  ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(1f/10,m_target .NotifyCycle_Thread_10FPS  ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(1f/5,m_target .NotifyCycle_Thread_5FPS    ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(1f/4,m_target .NotifyCycle_Thread_4FPS    ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(1f/2,m_target .NotifyCycle_Thread_2FPS    ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(1,m_target .NotifyCycle_Thread_1Second    ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(5,m_target .NotifyCycle_Thread_5Seconds   ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(10,m_target .NotifyCycle_Thread_10Seconds ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(20,m_target .NotifyCycle_Thread_20Seconds ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(30,m_target .NotifyCycle_Thread_30Seconds ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(60,m_target .NotifyCycle_Thread_1Minutes  ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(300,m_target .NotifyCycle_Thread_5Minutes ),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(600,m_target .NotifyCycle_Thread_10Minutes),
+              new Mock_ThreadAndUnityThreadClock.DelayHolder(900,m_target .NotifyCycle_Thread_15Minutes)
         };
     }
 

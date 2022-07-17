@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d1c3d0b7e547e41b599f402b24001b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_com: {fileID: 6856629469609272396}
+  m_com: {fileID: 3950097461715147302}
   m_booleanName: 
   m_booleanValue: 0
   m_isDefined: 0
@@ -59,7 +59,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6856629469609272387}
-  - component: {fileID: 6856629469609272396}
+  - component: {fileID: 3950097461715147302}
   m_Layer: 0
   m_Name: OMI Push And Access
   m_TagString: Untagged
@@ -82,7 +82,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6856629469609272396
+--- !u!114 &3950097461715147302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,6 +91,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6856629469609272398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b277f5f4ede04b419d80ae22adf6b81, type: 3}
+  m_Script: {fileID: 11500000, guid: a9df90fed6e715b4d97d1e9e02d63efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

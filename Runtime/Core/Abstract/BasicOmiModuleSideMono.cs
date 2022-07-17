@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbstractImplementOmiModuleSideMono :MonoBehaviour,  I_PushCommandToOMI , I_FetchSetBooleanOMI //, I_ListenToOMI
+public class BasicOmiModuleSideMono :MonoBehaviour,  I_PushCommandToOMI , I_FetchSetBooleanOMI //, I_ListenToOMI
 {
     public void GetBooleanValue(in string name, out bool value, in bool defaultIfNotDefined)
     {
@@ -13,16 +13,6 @@ public class AbstractImplementOmiModuleSideMono :MonoBehaviour,  I_PushCommandTo
     public bool GetBooleanValue(in string name, in bool defaultIfNotDefined)
     {
         return FacadeComLayerOMI.GetOmiSide().GetBooleanValue(in name, in defaultIfNotDefined);
-    }
-
-    public void GetConfigFilesFromExtension(in string fileExtensionName, out string[] filesPath)
-    {
-        FacadeComLayerOMI.GetOmiSide().GetConfigFilesFromExtension(in fileExtensionName, out filesPath);
-    }
-
-    public void GetXmlItemFromTagName(in string xmlTag, out string xmlText)
-    {
-        FacadeComLayerOMI.GetOmiSide().GetXmlItemFromTagName(in xmlTag, out xmlText);
     }
 
     public bool IsBooleanExists(in string name)

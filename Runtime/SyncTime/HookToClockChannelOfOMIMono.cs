@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AccessTimerOmiHookMono : MonoBehaviour, I_HookToTimeThreadCycleOMI
+public class HookToClockChannelOfOMIMono : MonoBehaviour, I_HookToTimeThreadCycleOMI
 {
 
     public bool IsStaticInstanceDefine() { return HookTimeFacadeOMI.GetInstanceHook() != null; }
@@ -45,7 +45,7 @@ public class AccessTimerOmiHookMono : MonoBehaviour, I_HookToTimeThreadCycleOMI
     public void Hook_UnityThread(TimeFrequenceType frequence, HookType hook, Action hookCallback)=>
         HookTimeFacadeOMI.GetInstanceHook().Hook_UnityThread(frequence, hook, hookCallback);
 }
-public class AccessTimerHookOmi : AbstractHookToTimeThreadCycleOMISide
+public class HookToClockChannelOfOMI : AbstractHookToTimeThreadCycleOMISide
 {
     public bool IsStaticInstanceDefine() { return HookTimeFacadeOMI.GetInstanceHook()!=null; }
     public override void Hook_Thread_10FPS(HookType hook, Action hookCallback) => HookTimeFacadeOMI.GetInstanceHook()            .Hook_Thread_10FPS(       hook, hookCallback);

@@ -187,19 +187,6 @@ MonoBehaviour:
     m_setBooleanTo:
       m_PersistentCalls:
         m_Calls: []
-    m_filePaths:
-    - Keyboard.keyboard2boolean
-    - Keyboard.A
-    - Keyboard.B
-    - Keyboard.C
-    m_fakeXML: '<xml>
-
-      <baliseA someinfo="" />
-
-      <baliseB > </baliseB>
-
-
-      </xml>'
     m_booleanState: 
 --- !u!1 &5210789530131629436
 GameObject:

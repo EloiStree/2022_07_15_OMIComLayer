@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DirtyScript_PullPushInfoComOMI : MonoBehaviour
 {
-    public AccessInfoOmiMono m_com;
+    public BasicOmiModuleSideMono m_com;
     public string m_booleanName="Name001";
     public bool m_booleanValue;
     public bool m_isDefined;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ExecuteAtTimePushOmiDemoMono : MonoBehaviour
 {
-    public AccessTimeExecutorOmiMono m_timeExecutor;
+    public QueueTaskOnOMIClockMono m_timeExecutor;
 
     [Header("At")]
     public int m_hour;

@@ -6,43 +6,9 @@ using UnityEngine.Events;
 
 
 [System.Serializable]
-public abstract class AbstractImplementOmiSide : I_PushCommandToOMI, I_FetchSetBooleanOMI
+public abstract class AbstractBasicBoolCmdOmiSide : I_PushCommandToOMI, I_FetchSetBooleanOMI
 {
-    #region LISTEN TO OMI
-    //public Action<string> m_listenToCommandLineNotTranslated;
-    //public Action<string> m_listenToShortcutNotTranslated;
-
-    //public void AddToListener(bool addTrue, Action<string> target, Action<string> action)
-    //{
-    //    if (addTrue)
-    //        target += action.Invoke;
-    //    else
-    //        target -= action.Invoke;
-    //}
-    //public void AddToListener(bool addTrue, Action target, Action action)
-    //{
-    //    if (addTrue)
-    //        target += action.Invoke;
-    //    else
-    //        target -= action.Invoke;
-    //}
-
    
-
-    //public void ListenToCommandLineNotTranslated(bool addTrueRemoveFalse, Action<string> commandLine)
-    //{
-    //    AddToListener(addTrueRemoveFalse, m_listenToCommandLineNotTranslated, commandLine);
-    //}
-
-    //public void ListenToShortcutNotTranslated(bool addTrueRemoveFalse, Action<string> shortcut)
-    //{
-    //    AddToListener(addTrueRemoveFalse, m_listenToShortcutNotTranslated, shortcut);
-    //}
-
-    #endregion
-
-
-
     #region FETCH OMI
     public abstract bool IsBooleanExists(in string name);
     public abstract void GetBooleanValue(in string name, out bool value, in bool defaultIfNotDefined);

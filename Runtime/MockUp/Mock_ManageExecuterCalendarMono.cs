@@ -9,12 +9,12 @@ public class Mock_ManageExecuterCalendarMono : MonoBehaviour
     public MockCalendarManageExecuterTime m_timeManager = new MockCalendarManageExecuterTime();
     void Awake()
     {
-        AccessCalendarExecutorComBridge.SetTimeExecuter(m_timeManager);
+        StaticCalendarExecutorComBridge.SetTimeExecuter(m_timeManager);
     }
 
     void OnDestory()
     {
-        AccessCalendarExecutorComBridge.RemoveTimeExecuter();
+        StaticCalendarExecutorComBridge.RemoveTimeExecuter();
     }
 }
 
