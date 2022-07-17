@@ -57,19 +57,19 @@ public class Mock_AbstractImplementOmiSide : AbstractImplementOmiSide
         return result;
     }
 
-    public override void GetConfigFilesFromExtension(in string fileExtensionName, out string[] filesPath)
-    {
-        List<string> files = new List<string>();
-        for (int i = 0; i < m_filePaths.Length; i++)
-        {
-            if (m_filePaths[i].ToLower().LastIndexOf(fileExtensionName.ToLower()) > -1)
-                files.Add(m_filePaths[i]);
-        }
-        filesPath = files.ToArray();
-    }
+    //public override void GetConfigFilesFromExtension(in string fileExtensionName, out string[] filesPath)
+    //{
+    //    List<string> files = new List<string>();
+    //    for (int i = 0; i < m_filePaths.Length; i++)
+    //    {
+    //        if (m_filePaths[i].ToLower().LastIndexOf(fileExtensionName.ToLower()) > -1)
+    //            files.Add(m_filePaths[i]);
+    //    }
+    //    filesPath = files.ToArray();
+    //}
 
-    public override void GetXmlItemFromTagName(in string xmlTag, out string xmlText)
-    {
-        xmlText = "<xml></xml>";
-    }
+    //public override void GetXmlItemFromTagName(in string xmlTag, out string xmlText)
+    //{
+    //    xmlText = "<xml></xml>";
+    //}
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbstractImplementOmiModuleSideMono :MonoBehaviour,  I_PushToOMI , I_FetchFromOMI //, I_ListenToOMI
+public class AbstractImplementOmiModuleSideMono :MonoBehaviour,  I_PushCommandToOMI , I_FetchSetBooleanOMI //, I_ListenToOMI
 {
     public void GetBooleanValue(in string name, out bool value, in bool defaultIfNotDefined)
     {

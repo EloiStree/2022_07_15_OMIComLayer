@@ -6,54 +6,38 @@ using UnityEngine.Events;
 
 
 [System.Serializable]
-public abstract class AbstractImplementOmiSide : I_PushToOMI, I_FetchFromOMI, I_ListenToOMI
+public abstract class AbstractImplementOmiSide : I_PushCommandToOMI, I_FetchSetBooleanOMI
 {
     #region LISTEN TO OMI
-    public Action<string> m_listenToFileExtensionChange;
-    public Action m_listenToConfigFileChange;
-    public Action m_listenToConfigXmlChange;
-    public Action<string> m_listenToCommandLineNotTranslated;
-    public Action<string> m_listenToShortcutNotTranslated;
+    //public Action<string> m_listenToCommandLineNotTranslated;
+    //public Action<string> m_listenToShortcutNotTranslated;
 
-    public void AddToListener(bool addTrue, Action<string> target, Action<string> action)
-    {
-        if (addTrue)
-            target += action.Invoke;
-        else
-            target -= action.Invoke;
-    }
-    public void AddToListener(bool addTrue, Action target, Action action)
-    {
-        if (addTrue)
-            target += action.Invoke;
-        else
-            target -= action.Invoke;
-    }
+    //public void AddToListener(bool addTrue, Action<string> target, Action<string> action)
+    //{
+    //    if (addTrue)
+    //        target += action.Invoke;
+    //    else
+    //        target -= action.Invoke;
+    //}
+    //public void AddToListener(bool addTrue, Action target, Action action)
+    //{
+    //    if (addTrue)
+    //        target += action.Invoke;
+    //    else
+    //        target -= action.Invoke;
+    //}
 
-    public void ListenToFileExtensionChange(bool addTrueRemoveFalse, Action<string> fileExtensionChanged)
-    {
-        AddToListener(addTrueRemoveFalse ,m_listenToFileExtensionChange, fileExtensionChanged);
-    }
+   
 
-    public void ListenToConfigFileChange(bool addTrueRemoveFalse, Action fileExtensionChanged)
-    {
-        AddToListener(addTrueRemoveFalse, m_listenToConfigFileChange, fileExtensionChanged);
-    }
+    //public void ListenToCommandLineNotTranslated(bool addTrueRemoveFalse, Action<string> commandLine)
+    //{
+    //    AddToListener(addTrueRemoveFalse, m_listenToCommandLineNotTranslated, commandLine);
+    //}
 
-    public void ListenToConfigXmlChange(bool addTrueRemoveFalse, Action fileExtensionChanged)
-    {
-        AddToListener(addTrueRemoveFalse, m_listenToConfigXmlChange, fileExtensionChanged);
-    }
-
-    public void ListenToCommandLineNotTranslated(bool addTrueRemoveFalse, Action<string> commandLine)
-    {
-        AddToListener(addTrueRemoveFalse, m_listenToCommandLineNotTranslated, commandLine);
-    }
-
-    public void ListenToShortcutNotTranslated(bool addTrueRemoveFalse, Action<string> shortcut)
-    {
-        AddToListener(addTrueRemoveFalse, m_listenToShortcutNotTranslated, shortcut);
-    }
+    //public void ListenToShortcutNotTranslated(bool addTrueRemoveFalse, Action<string> shortcut)
+    //{
+    //    AddToListener(addTrueRemoveFalse, m_listenToShortcutNotTranslated, shortcut);
+    //}
 
     #endregion
 
@@ -63,8 +47,6 @@ public abstract class AbstractImplementOmiSide : I_PushToOMI, I_FetchFromOMI, I_
     public abstract bool IsBooleanExists(in string name);
     public abstract void GetBooleanValue(in string name, out bool value, in bool defaultIfNotDefined);
     public abstract bool GetBooleanValue(in string name, in bool defaultIfNotDefined);
-    public abstract void GetConfigFilesFromExtension(in string fileExtensionName, out string[] filesPath);
-    public abstract void GetXmlItemFromTagName(in string xmlTag, out string xmlText);
     #endregion
 
 
@@ -79,6 +61,7 @@ public abstract class AbstractImplementOmiSide : I_PushToOMI, I_FetchFromOMI, I_
     [System.Serializable]
     public class NamedBooleanEvent : UnityEvent<string, bool> { }
     public NamedBooleanEvent m_setBooleanTo = new NamedBooleanEvent();
+
     public void PushCommandLine(in string line)
     {
         m_toInterpretCommandLine.Invoke(line);
@@ -92,14 +75,10 @@ public abstract class AbstractImplementOmiSide : I_PushToOMI, I_FetchFromOMI, I_
             m_toInterpretShortcut.Invoke(line);
     }
 
-    public void SetBooleanValue(in string name, in bool newValue)
+    public void SetBooleanValue(in string name, in bool value)
     {
-        m_setBooleanTo.Invoke(name, newValue);
+        m_setBooleanTo.Invoke(name, value);
     }
 
-
     #endregion
-
-
-
 }
