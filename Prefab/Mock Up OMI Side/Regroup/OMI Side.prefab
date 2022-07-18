@@ -27,10 +27,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1512436698249693977}
+  - {fileID: 4919723397519541398}
   - {fileID: 517153935675184697}
   - {fileID: 7855326578396360090}
-  - {fileID: 4919723397519541398}
+  - {fileID: 1512436698249693977}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,6 +96,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4612450987389539681, guid: 4ad94a4d86150e547998ab59fbdc31a7, type: 3}
   m_PrefabInstance: {fileID: 3242888992512751867}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7855326578396360084 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4612450987389539695, guid: 4ad94a4d86150e547998ab59fbdc31a7, type: 3}
+  m_PrefabInstance: {fileID: 3242888992512751867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1c6ae1991ff7b4c95fd5f69871e68a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3715736797345332316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,13 +114,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8630396918496414964}
     m_Modifications:
+    - target: {fileID: 2841124610927081283, guid: c4bb97aba27628f43a0d0fe93979118d, type: 3}
+      propertyPath: m_timeExecuter
+      value: 
+      objectReference: {fileID: 7855326578396360084}
     - target: {fileID: 2841124610927081284, guid: c4bb97aba27628f43a0d0fe93979118d, type: 3}
       propertyPath: m_Name
       value: 'OMI Calendar Executor Mock up '
       objectReference: {fileID: 0}
     - target: {fileID: 2841124610927081285, guid: c4bb97aba27628f43a0d0fe93979118d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2841124610927081285, guid: c4bb97aba27628f43a0d0fe93979118d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1031076303822008292, guid: 74cf46350ee2938439c6a5f4ffd99841, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1031076303822008292, guid: 74cf46350ee2938439c6a5f4ffd99841, type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,15 +206,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1031076303822008292, guid: 74cf46350ee2938439c6a5f4ffd99841, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1031076303822008292, guid: 74cf46350ee2938439c6a5f4ffd99841, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1031076303822008292, guid: 74cf46350ee2938439c6a5f4ffd99841, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1031076303822008292, guid: 74cf46350ee2938439c6a5f4ffd99841, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -249,15 +264,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5210789529869340200, guid: b54ea5975d7b52a45b59308903685ff5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5210789529869340200, guid: b54ea5975d7b52a45b59308903685ff5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5210789529869340200, guid: b54ea5975d7b52a45b59308903685ff5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5210789529869340200, guid: b54ea5975d7b52a45b59308903685ff5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -273,7 +288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5210789529869340202, guid: b54ea5975d7b52a45b59308903685ff5, type: 3}
       propertyPath: m_Name
-      value: OMI Implementation Mock up
+      value: OMI  Implementation Mock up
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54ea5975d7b52a45b59308903685ff5, type: 3}

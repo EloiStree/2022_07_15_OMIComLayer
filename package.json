@@ -1,0 +1,23 @@
+
+{                                                                                
+  "name": "be.eloistree.momi",                              
+  "displayName": "Module OMI  Com Layer",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "This package is a interface & facade toolbox to allows mod of OMI to communicate with the application. It also allows mod to not all create thread and coroutine but use the one that OMI provide to avoid leaking performence.  If you are trying to create an interpretor you need an other package (See doc and/or add it from the demo scene of this one).",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples" : [],     
+  "author" : {
+"name":"",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2022_07_15_OMIModuleComLayer.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 
